@@ -39,3 +39,36 @@ html_context = {
     "github_version": "main",
     "doc_path": "docs",
 }
+
+
+def add_chapter_breadcrumbs(app, pagename, templatename, context, doctree):
+    """Include toctree chapter captions in the page's full navigation path."""
+    from sphinx import addnodes
+
+    relations = app.env.collect_relations()
+    if pagename not in relations or pagename == app.config.root_doc:
+        return
+
+    ancestry = []
+    child = pagename
+    while relations[child][0] is not None:
+        parent = relations[child][0]
+        ancestry.append((parent, child))
+        child = parent
+
+    breadcrumbs = []
+    for parent, child in reversed(ancestry):
+        if parent != app.config.root_doc:
+            breadcrumbs.append({
+                "link": app.builder.get_relative_uri(pagename, parent),
+                "title": app.env.titles[parent].astext(),
+            })
+        for tree in app.env.get_doctree(parent).findall(addnodes.toctree):
+            if child in tree.get("includefiles", []) and tree.get("caption"):
+                breadcrumbs.append({"link": None, "title": tree["caption"]})
+                break
+    context["parents"] = breadcrumbs
+
+
+def setup(app):
+    app.connect("html-page-context", add_chapter_breadcrumbs)

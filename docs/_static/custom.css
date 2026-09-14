@@ -42,3 +42,12 @@ h2 { font-weight: 650; letter-spacing: -.02em; }
   padding: .2rem .8rem;
   font-size: .8rem;
 }
+
+/* Keep every chapter and page name visible in long breadcrumb paths. */
+.bd-breadcrumbs { flex-wrap: wrap; }
+.bd-breadcrumbs .breadcrumb-item { max-width: 100%; }
+.bd-breadcrumbs .ellipsis {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
