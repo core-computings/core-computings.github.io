@@ -21,14 +21,29 @@ Open http://localhost:8000. Rebuild after editing the documentation.
 
 ## Editing
 
-- `docs/index.md`: the initial, single-page documentation preview.
-- `docs/conf.py`: Sphinx and theme settings.
-- `docs/_static/custom.css`: visual customizations.
-- `docs/_templates/core-nav.html`: navigation for the preview page.
+Each topic is an independent Markdown file, grouped by chapter:
 
-To expand the site, add Markdown files under `docs/` and include them in a MyST
-`toctree` in `docs/index.md`. Replace the preview's custom sidebar with the theme's
-`sidebar-nav-bs` template in `html_sidebars` when adding page-based navigation.
+```text
+docs/
+├── index.md                    # Homepage and chapter navigation (toctrees)
+├── getting-started/
+│   ├── installation.md
+│   └── first-example.md
+├── backends/
+│   └── overview.md
+├── development/
+│   ├── testing.md
+│   └── documentation.md        # Detailed authoring instructions
+├── conf.py                     # Sphinx and theme settings
+├── _static/custom.css
+└── _templates/core-nav.html    # Global sidebar generated from the toctrees
+```
+
+To add a topic, create a Markdown file and list its path (without `.md`) in the
+matching `toctree` in `docs/index.md`. Each `:caption:` defines a chapter. The
+entry order controls the sidebar order. No HTML or Python edits are needed.
+The first `# Heading` is the page title; `##` headings form its right-hand TOC.
+See `docs/development/documentation.md` for a complete example.
 
 ## Deployment
 

@@ -15,7 +15,7 @@ html_baseurl = "https://core-computings.github.io/"
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 html_show_sourcelink = False
-html_sidebars = {"**": ["sidebar-nav-bs"], "index": ["core-nav.html"]}
+html_sidebars = {"**": ["core-nav.html"]}
 html_theme_options = {
     "logo": {"text": "CORE"},
     "navbar_center": [],
@@ -29,7 +29,7 @@ html_theme_options = {
     ],
     "secondary_sidebar_items": ["page-toc", "edit-this-page"],
     "use_edit_page_button": True,
-    "show_prev_next": False,
+    "show_prev_next": True,
     "footer_start": ["copyright"],
     "footer_end": ["theme-version"],
 }

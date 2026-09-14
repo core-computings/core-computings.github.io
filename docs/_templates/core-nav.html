@@ -1,11 +1,7 @@
-<nav class="core-nav" aria-label="Documentation navigation">
-  <p class="core-nav-label">DOCUMENTATION</p>
-  <a class="core-nav-home" href="{{ pathto('index') }}">Overview</a>
-  <p class="core-nav-label">GET STARTED</p>
-  <a href="#installation">Installation</a>
-  <a href="#first-example">First example</a>
-  <a href="#run-tests">Run tests</a>
-  <p class="core-nav-label">EXPLORE</p>
-  <a href="#gpu-backends">GPU backends</a>
-  <a href="https://github.com/chuzcjoe/CORE/tree/main/examples">Example source ↗</a>
+<nav class="bd-docs-nav bd-links core-nav" aria-label="Documentation navigation">
+  <a class="core-home" href="{{ pathto(root_doc) }}"{% if pagename == root_doc %} aria-current="page"{% endif %}>Overview</a>
+  <div class="bd-toc-item navbar-nav">
+    {{ generate_toctree_html("sidebar", startdepth=0, show_nav_level=1,
+         maxdepth=2, collapse=False, includehidden=True, titles_only=True) }}
+  </div>
 </nav>

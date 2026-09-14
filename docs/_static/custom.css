@@ -15,29 +15,18 @@ html[data-theme="dark"] {
 h1 { font-weight: 750; letter-spacing: -.035em; }
 h2 { font-weight: 650; letter-spacing: -.02em; }
 .bd-article { line-height: 1.75; }
-.core-nav { padding: 1.5rem .5rem; }
-.core-nav-label {
-  margin: 1.75rem 0 .55rem;
-  color: var(--pst-color-text-muted);
-  font-size: .7rem;
-  font-weight: 700;
-  letter-spacing: .12em;
-}
-.core-nav-label:first-child { margin-top: 0; }
-.core-nav a {
+.core-nav .core-home {
   display: block;
-  padding: .45rem .75rem;
-  margin: .15rem 0;
-  border-radius: .35rem;
+  margin-bottom: 1.5rem;
+  padding: .5rem .75rem;
   color: var(--pst-color-text-base);
   text-decoration: none;
-  font-size: .9rem;
 }
-.core-nav a:hover, .core-nav a.core-nav-home {
-  background: var(--pst-color-surface);
+.core-nav .core-home[aria-current="page"] {
   color: var(--pst-color-primary);
+  border-left: 3px solid var(--pst-color-primary);
+  background: var(--pst-color-surface);
 }
-.core-nav a.core-nav-home { border-left: 3px solid var(--pst-color-primary); }
 .core-eyebrow {
   color: var(--pst-color-primary);
   font-size: .75rem;
