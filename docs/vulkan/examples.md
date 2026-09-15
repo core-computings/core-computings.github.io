@@ -31,3 +31,34 @@ interactive scenes.
 
 Run the selected executable from the CORE repository root so relative shader and
 asset paths resolve correctly.
+
+```bash
+# Start with the smallest graphics example.
+./build/macos/examples/vk_triangle_demo
+
+# Then exercise textures and model resources.
+./build/macos/examples/vk_texture_demo
+./build/macos/examples/vk_model_demo
+```
+
+## Read an example efficiently
+
+For each example, begin with `main.cpp` to see object ownership and the frame
+loop. Then inspect its `Render*.h` for the `VulkanRender` specialization and its
+`Render*.cpp` for resource upload, descriptor writes, and draw recording.
+
+For example, `DrawTriangleDemo` separates responsibilities like this:
+
+```text
+main.cpp
+  window + surface → context → swapchain → frame loop
+
+RenderTriangle.cpp
+  staging buffers → descriptor set → graphics pipeline → draw commands
+```
+
+```{note}
+Run examples from the repository root. Several examples depend on relative asset
+paths, and `scripts/sync_data.sh` populates assets maintained in the separate
+`core_data` repository.
+```
