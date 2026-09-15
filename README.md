@@ -25,18 +25,27 @@ Each topic is an independent Markdown file, grouped by chapter:
 
 ```text
 docs/
-├── index.md                    # Homepage and chapter navigation (toctrees)
-├── getting-started/
-│   ├── installation.md
-│   └── first-example.md
-├── backends/
-│   └── overview.md
-├── development/
-│   ├── testing.md
-│   └── documentation.md        # Detailed authoring instructions
-├── conf.py                     # Sphinx and theme settings
+├── index.md                     # Homepage and chapter navigation
+├── getting-started/             # Shared setup and first run
+├── vulkan/                      # Main documentation section
+│   ├── overview.md
+│   ├── context-and-device.md
+│   ├── buffers-and-images.md
+│   ├── commands-and-sync.md
+│   ├── descriptors-and-pipelines.md
+│   ├── compute.md
+│   ├── rendering.md
+│   ├── swapchain-and-presentation.md
+│   ├── examples.md
+│   └── testing-and-performance.md
+├── opengl/overview.md           # Reserved backend section
+├── opengles/overview.md         # Reserved backend section
+├── opencl/overview.md           # Reserved backend section
+├── metal/overview.md            # Reserved backend section
+├── development/                 # Project-wide guides
+├── conf.py                      # Sphinx and theme settings
 ├── _static/custom.css
-└── _templates/core-nav.html    # Global sidebar generated from the toctrees
+└── _templates/core-nav.html     # Sidebar generated from the toctrees
 ```
 
 To add a topic, create a Markdown file and list its path (without `.md`) in the
