@@ -11,7 +11,7 @@ cd CORE
 ## Install dependencies with an AI agent
 
 The canonical installation instructions are maintained in
-[`docs/install_dependencies.md`](https://github.com/chuzcjoe/CORE/blob/main/docs/install_dependencies.md)
+[`docs/install_dependencies.md`](https://github.com/chuzcjoe/CORE/blob/master/docs/install_dependencies.md)
 in the CORE repository. Ask an AI coding agent to read that file and prepare the
 local machine for the required target.
 
