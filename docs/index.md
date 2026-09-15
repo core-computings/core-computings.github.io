@@ -1,6 +1,6 @@
 <div class="core-eyebrow">COMPUTE AND OPEN RENDERING ENGINE</div>
 
-# GPU computing, made approachable.
+# CORE: Computing and Rendering
 
 <div class="core-lead">A C++20 framework for GPU computing and rendering across Vulkan, Metal, OpenGL, and OpenCL.</div>
 
