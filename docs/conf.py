@@ -13,6 +13,7 @@ html_theme = "pydata_sphinx_theme"
 html_title = "CORE Documentation"
 html_baseurl = "https://core-computings.github.io/"
 html_static_path = ["_static"]
+html_extra_path = ["robots.txt"]
 html_css_files = ["custom.css"]
 html_show_sourcelink = False
 html_sidebars = {"**": ["core-nav.html"]}
